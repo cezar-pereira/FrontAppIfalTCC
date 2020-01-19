@@ -1,0 +1,78 @@
+import 'package:caderneta_ifal_mobx/app/modules/home/home_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx/mobx.dart';
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Color _colorItemNavigationDisable = Colors.black54;
+    HomeController homeController = HomeController();
+
+    PageController _controllerPageView = PageController(initialPage: 0);
+
+    return Observer(
+      builder: (BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(homeController.appBarTitle),
+          ),
+          body: PageView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: _controllerPageView,
+            onPageChanged: (index) {
+            },
+            children: <Widget>[
+              // EventsPage(),
+              // AnnouncementsPage(),
+              // MessagesPage(),
+              // ReportPage(),
+              // SettingsPage()
+
+              Text("eventos"),
+              Text("comunicados"),
+              Text("mensagens"),
+              Text("relatorio"),
+              Text("config"),
+            ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            unselectedItemColor: _colorItemNavigationDisable,
+            unselectedLabelStyle: TextStyle(color: _colorItemNavigationDisable),
+            showUnselectedLabels: true,
+            selectedItemColor: Theme.of(context).primaryColor,
+            currentIndex: homeController.currentIndex,
+            onTap: (index) {
+
+              homeController.changeCurrentIndex(index);
+              _controllerPageView.jumpToPage(index);
+              print("Página atual: $index");
+            },
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.date_range),
+                title: Text('Eventos'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.people),
+                title: Text('Comunicado'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.chat),
+                title: Text('Mensagens'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.assignment),
+                title: Text('Relatório'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.more_vert),
+                title: Text('Configurações'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
