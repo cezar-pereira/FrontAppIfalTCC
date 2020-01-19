@@ -1,3 +1,4 @@
+import 'package:caderneta_ifal_mobx/app/modules/events/events_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -23,13 +24,13 @@ class HomePage extends StatelessWidget {
             onPageChanged: (index) {
             },
             children: <Widget>[
-              // EventsPage(),
+              EventsPage(),
               // AnnouncementsPage(),
               // MessagesPage(),
               // ReportPage(),
               // SettingsPage()
 
-              Text("eventos"),
+              // Text("eventos"),
               Text("comunicados"),
               Text("mensagens"),
               Text("relatorio"),
