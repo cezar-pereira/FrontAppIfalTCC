@@ -1,3 +1,4 @@
+import 'package:caderneta_ifal_mobx/app/modules/announcements/announcements_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/events/events_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
@@ -25,13 +26,10 @@ class HomePage extends StatelessWidget {
             },
             children: <Widget>[
               EventsPage(),
-              // AnnouncementsPage(),
+              AnnouncementsPage(),
               // MessagesPage(),
               // ReportPage(),
               // SettingsPage()
-
-              // Text("eventos"),
-              Text("comunicados"),
               Text("mensagens"),
               Text("relatorio"),
               Text("config"),
@@ -56,7 +54,7 @@ class HomePage extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.people),
-                title: Text('Comunicado'),
+                title: Text('Comunicados'),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.chat),
