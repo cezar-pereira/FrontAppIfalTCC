@@ -1,6 +1,7 @@
 import 'package:caderneta_ifal_mobx/app/modules/announcements/announcements_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/events/events_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/home/home_controller.dart';
+import 'package:caderneta_ifal_mobx/app/modules/report/report_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
@@ -27,11 +28,10 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               EventsPage(),
               AnnouncementsPage(),
-              // MessagesPage(),
-              // ReportPage(),
-              // SettingsPage()
               Text("mensagens"),
-              Text("relatorio"),
+              ReportPage(),
+              // MessagesPage(),
+              // SettingsPage()
               Text("config"),
             ],
           ),
@@ -42,7 +42,6 @@ class HomePage extends StatelessWidget {
             selectedItemColor: Theme.of(context).primaryColor,
             currentIndex: homeController.currentIndex,
             onTap: (index) {
-
               homeController.changeCurrentIndex(index);
               _controllerPageView.jumpToPage(index);
               print("Página atual: $index");
