@@ -30,7 +30,7 @@ abstract class _HomeBase with Store {
         appBarTitle = "Relatório";
         break;
       case 4:
-        appBarTitle = "Mais";
+        appBarTitle = "Configurações";
         break;
     }
   }
