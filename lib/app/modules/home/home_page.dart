@@ -43,6 +43,7 @@ class HomePage extends StatelessWidget {
             currentIndex: homeController.currentIndex,
             onTap: (index) {
               homeController.changeCurrentIndex(index);
+              homeController.changeTitle(index);
               _controllerPageView.jumpToPage(index);
               print("Página atual: $index");
             },
