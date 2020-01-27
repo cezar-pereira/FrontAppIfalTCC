@@ -1,5 +1,4 @@
 import 'package:caderneta_ifal_mobx/app/modules/messages/components/Components.dart';
-import 'package:caderneta_ifal_mobx/app/modules/messages/components/chat/chat_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/messages/messages_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -10,7 +9,6 @@ class MessagesPage extends StatelessWidget with Components {
     MessagesController messagesController = MessagesController();
     return Scaffold(
       body: Container(
-        // color: Color(0xffECFCFF),
         color: Colors.white,
         padding: EdgeInsets.symmetric(horizontal: 8),
         child: Column(
@@ -18,16 +16,16 @@ class MessagesPage extends StatelessWidget with Components {
           children: <Widget>[
             Expanded(
               child: ListView.separated(
+                physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: messagesController.getMessages().length,
                 itemBuilder: (BuildContext context, int index) {
                   return Observer(
                     builder: (BuildContext context) {
                       return GestureDetector(
-                        onTap: () => Navigator.push(context,
-                            MaterialPageRoute(builder: (BuildContext context) {
-                          return ChatPage();
-                        })),
+                        onTap: () {
+                          // Modular.to.pushNamed(" ");
+                        },
                         child: Container(
                           margin:
                               EdgeInsets.symmetric(horizontal: 3, vertical: 3),
@@ -36,13 +34,12 @@ class MessagesPage extends StatelessWidget with Components {
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 10,
+                                blurRadius: 3,
                                 color: Colors.black12,
                               )
                             ],
                           ),
                           padding: EdgeInsets.all(8),
-                          height: 110,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -76,7 +73,7 @@ class MessagesPage extends StatelessWidget with Components {
                               SizedBox(height: 8),
                               Text(
                                 "${messagesController.getMessages()[index]['message']}",
-                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                               )
                             ],
                           ),

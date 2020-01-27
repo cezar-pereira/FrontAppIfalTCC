@@ -1,10 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class MessagesRepository extends Disposable {
-  // final Dio dio;
-
-  // MessagesRepository(this.dio);
 
 //TEMPORARIO
   List messages = [
@@ -28,8 +24,6 @@ class MessagesRepository extends Disposable {
     return messages;
   }
 
-
-  // Future
 
   //dispose will be called automatically
   @override
