@@ -2,6 +2,8 @@ import 'package:caderneta_ifal_mobx/app/modules/messages/components/Components.d
 import 'package:caderneta_ifal_mobx/app/modules/messages/messages_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get.dart';
 
 class MessagesPage extends StatelessWidget with Components {
   @override

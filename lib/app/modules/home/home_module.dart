@@ -1,6 +1,10 @@
+
+
+import 'package:caderneta_ifal_mobx/app/modules/chat/chat_module.dart';
+import 'package:caderneta_ifal_mobx/app/modules/event/event_module.dart';
 import 'package:caderneta_ifal_mobx/app/modules/home/home_controller.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:caderneta_ifal_mobx/app/modules/home/home_page.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeModule extends ChildModule {
   @override
@@ -10,7 +14,9 @@ class HomeModule extends ChildModule {
 
   @override
   List<Router> get routers => [
-        Router('/home', child: (_, args) => HomePage()),
+        Router('/', child: (_, args) => HomePage()),
+
+
       ];
 
   static Inject get to => Inject<HomeModule>.of();

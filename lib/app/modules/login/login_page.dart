@@ -1,6 +1,7 @@
 import 'package:caderneta_ifal_mobx/app/modules/shared/Components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,9 +13,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> with Components {
-  var maskFormatterPhone = new MaskTextInputFormatter(
+  var maskFormatterPhone = MaskTextInputFormatter(
       mask: '(##) #####-####', filter: {"#": RegExp(r'[0-9]')});
-  var maskFormatterCpf = new MaskTextInputFormatter(
+  var maskFormatterCpf = MaskTextInputFormatter(
       mask: '###.###.###-##', filter: {"#": RegExp(r'[0-9]')});
   var textUserController = TextEditingController();
   var textPassController = TextEditingController();
@@ -47,8 +48,7 @@ class _LoginPageState extends State<LoginPage> with Components {
                   child: Container(
                     padding: EdgeInsets.fromLTRB(30, heightScreen / 10, 30, 0),
                     margin: EdgeInsets.fromLTRB(30, heightScreen / 6, 30, 0),
-                    height: MediaQuery.of(context).size.height / 1.7,
-                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height / 1.5,
                     decoration: BoxDecoration(
                       boxShadow: <BoxShadow>[
                         BoxShadow(
@@ -74,9 +74,9 @@ class _LoginPageState extends State<LoginPage> with Components {
                         GestureDetector(
                           child: bottomConfirm(text: "ENTRAR"),
                           onTap: () {
-                            print("Telefone: " + textPhoneController.text);
-                            print("CPF: " + textCpfController.text);
-                            Modular.to.pushReplacementNamed("/home");
+                            // print("Telefone: " + textPhoneController.text);
+                            // print("CPF: " + textCpfController.text);
+                            Get.offNamed("/home");
                           },
                         ),
                         SizedBox(height: 25),

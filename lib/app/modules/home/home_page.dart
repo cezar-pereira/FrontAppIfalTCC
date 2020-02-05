@@ -1,4 +1,6 @@
 import 'package:caderneta_ifal_mobx/app/modules/announcements/announcements_page.dart';
+import 'package:caderneta_ifal_mobx/app/modules/event/event_module.dart';
+import 'package:caderneta_ifal_mobx/app/modules/events/events_module.dart';
 import 'package:caderneta_ifal_mobx/app/modules/events/events_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/home/home_controller.dart';
 import 'package:caderneta_ifal_mobx/app/modules/messages/messages_page.dart';
@@ -6,6 +8,7 @@ import 'package:caderneta_ifal_mobx/app/modules/report/report_page.dart';
 import 'package:caderneta_ifal_mobx/app/modules/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -27,9 +30,10 @@ class HomePage extends StatelessWidget {
             controller: _controllerPageView,
             onPageChanged: (index) {
             },
-            children: <Widget>[
+            children: [
               EventsPage(),
               AnnouncementsPage(),
+
               MessagesPage(),
               ReportPage(),
               SettingsPage(),

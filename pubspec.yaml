@@ -20,6 +20,8 @@ scripts:
   mobx: flutter pub run build_runner watch
 
 dependencies:
+  share: ^0.6.3+5
+  get: ^1.6.3
   dio: ^3.0.8
   flutter_mobx: ^0.3.6
   mobx: ^0.4.0+1
